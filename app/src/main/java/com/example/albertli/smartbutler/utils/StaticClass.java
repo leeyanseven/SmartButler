@@ -8,4 +8,10 @@ package com.example.albertli.smartbutler.utils;
 
 public class StaticClass {
 
+    //闪屏页
+    public static final int HANDLE_SPLASH = 1001;
+
+    //第一次运行
+    public static final String IS_FIRST_RUNNING = "is_first_running";
+
 }

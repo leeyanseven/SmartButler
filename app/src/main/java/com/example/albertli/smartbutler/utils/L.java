@@ -11,7 +11,7 @@ import android.util.Log;
 public class L {
 
     //开关
-    public static final  boolean DEBUG = true;
+    public static final boolean DEBUG = true;
     //TAG
     public static final String TAG = "Smartbutler";
 
