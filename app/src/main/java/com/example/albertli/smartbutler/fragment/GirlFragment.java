@@ -14,7 +14,8 @@ import android.view.ViewGroup;
 import com.example.albertli.smartbutler.R;
 
 public class GirlFragment extends Fragment {
-    public View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
         View view = inflater.inflate(R.layout.fragment_girl, null);
         return view;
     }
