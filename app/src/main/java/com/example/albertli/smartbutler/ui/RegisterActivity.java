@@ -11,10 +11,10 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.albertli.smartbutler.R;
-/*import com.example.albertli.smartbutler.entity.MyUser;
+import com.example.albertli.smartbutler.entity.MyUser;
 
 import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.SaveListener;*/
+import cn.bmob.v3.listener.SaveListener;
 
 /**
  * Project Name: SmartButler
@@ -22,8 +22,7 @@ import cn.bmob.v3.listener.SaveListener;*/
  * Created by albert.li on 2018/5/26.
  */
 
-public class RegisterActivity extends BaseActivity {
-//public class RegisterActivity extends BaseActivity implements View.OnClickListener{
+public class RegisterActivity extends BaseActivity implements View.OnClickListener{
 
     private EditText et_user;
     private EditText et_age;
@@ -41,10 +40,10 @@ public class RegisterActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        //initView();
+        initView();
     }
 
-    /*private void initView()
+    private void initView()
     {
         et_user = (EditText) findViewById(R.id.et_user);
         et_age = (EditText) findViewById(R.id.et_age);
@@ -120,5 +119,5 @@ public class RegisterActivity extends BaseActivity {
                 break;
         }
 
-    }*/
+    }
 }
