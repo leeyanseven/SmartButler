@@ -17,4 +17,7 @@ public class StaticClass {
     //bugly key
     public static final String BUGLY_ID = "76aa0ea188";
 
+    //bugly key
+    public static final String BMOB_ID = "b4bd5a4542d1912b666d0fe736794d3c";
+
 }

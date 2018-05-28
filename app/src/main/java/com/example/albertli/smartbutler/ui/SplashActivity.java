@@ -43,7 +43,7 @@ public class SplashActivity extends AppCompatActivity {
                         startActivity(new Intent(SplashActivity.this,GuideActivity.class));
                     } else {
                         //跳转到MainActivity
-                        startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                        startActivity(new Intent(SplashActivity.this,LoginActivity.class));
                     }
                     finish();
                     break;

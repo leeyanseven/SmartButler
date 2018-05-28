@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initData();
         initView();
 
-        CrashReport.testJavaCrash();
+        //CrashReport.testJavaCrash();
     }
     private void initData(){
         mTitle = new ArrayList<>();
