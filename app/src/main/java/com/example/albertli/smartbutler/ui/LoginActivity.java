@@ -29,7 +29,6 @@ import cn.bmob.v3.listener.SaveListener;
  * Created by albert.li on 2018/5/26.
  */
 
-//public class LoginActivity extends AppCompatActivity {
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnRegister;
@@ -61,9 +60,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnLogin.setOnClickListener(this);
         tv_forget = (TextView) findViewById(R.id.tv_forget);
         tv_forget.setOnClickListener(this);
-        dialog = new CustomDialog(this,100,100,R.layout.dialog_loading, R.style.Theme_dialog, Gravity.CENTER,R.style.pop_anim_style);
+        //photo
+        dialog = new CustomDialog(this,100,100,R.layout.dialog_loading,
+                R.style.Theme_dialog, Gravity.BOTTOM,R.style.pop_anim_style);
         //屏幕外点击无效
         dialog.setCancelable(false);
+
 
         //设置 记住密码
         Boolean isCheck = ShareUtils.getBoolean(this,"keep_passwd",false);
