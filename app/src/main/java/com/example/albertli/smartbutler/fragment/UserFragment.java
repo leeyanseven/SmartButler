@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
-import android.support.v4.print.PrintHelper;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -26,8 +25,10 @@ import android.widget.Toast;
 
 import com.example.albertli.smartbutler.R;
 import com.example.albertli.smartbutler.entity.MyUser;
+import com.example.albertli.smartbutler.ui.CourierActivity;
 import com.example.albertli.smartbutler.ui.LoginActivity;
 import com.example.albertli.smartbutler.utils.L;
+import com.example.albertli.smartbutler.utils.UtilTools;
 import com.example.albertli.smartbutler.view.CustomDialog;
 
 import java.io.File;
@@ -50,6 +51,8 @@ public class UserFragment extends Fragment implements View.OnClickListener{
     private Button btn_camera;
     private Button btn_picture;
     private Button btn_cancel;
+    private TextView tv_courier;
+
     //圆形头像
     private CircleImageView profile_image;
 
@@ -89,7 +92,6 @@ public class UserFragment extends Fragment implements View.OnClickListener{
         btn_picture.setOnClickListener(this);
         btn_cancel.setOnClickListener(this);
 
-
         //默认不可编辑
         setEnabled(false);
 
@@ -100,6 +102,8 @@ public class UserFragment extends Fragment implements View.OnClickListener{
         et_age.setText(String.valueOf(userInfo.getAge()));
         et_desc.setText(userInfo.getDesc());
 
+        tv_courier = (TextView) view.findViewById(R.id.tv_courier);
+        tv_courier.setOnClickListener(this);
     }
 
     private void setEnabled(Boolean enabled)
@@ -201,7 +205,9 @@ public class UserFragment extends Fragment implements View.OnClickListener{
             case R.id.btn_cancel:
                 dialog.dismiss();
                 break;
-
+            case R.id.tv_courier:
+                startActivity(new Intent(getActivity(),CourierActivity.class));
+                break;
         }
     }
 

@@ -65,6 +65,11 @@
             android:label="foget passwd">
         </activity>
 
+        <!--快递查询-->
+        <activity android:name=".ui.CourierActivity"
+            android:label="query package">
+        </activity>
+
     </application>
 
 

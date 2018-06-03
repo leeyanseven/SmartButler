@@ -20,4 +20,7 @@ public class StaticClass {
     //bugly key
     public static final String BMOB_ID = "b4bd5a4542d1912b666d0fe736794d3c";
 
+    //Courier key
+    public static final String COURIER_ID = "008db4b82ca280aa596ba00e809debb3";
+
 }
