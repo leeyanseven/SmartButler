@@ -11,6 +11,17 @@ import android.content.SharedPreferences;
 
 public class ShareUtils {
 
+    /*public void test(Context mContext)
+    {
+        SharedPreferences sp = mContext.getSharedPreferences("config",Context.MODE_PRIVATE);
+        sp.getString("key","未获取到值");
+        //edit方法返回 Editor对象
+        SharedPreferences.Editor editor = sp.edit();
+
+        editor.putString("key","value");
+        editor.commit();
+    }*/
+
     public static final String NAME = "config";
 
     //键 值

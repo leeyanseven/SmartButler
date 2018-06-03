@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.example.albertli.smartbutler.fragment.ButlerFragment;
@@ -16,6 +15,7 @@ import com.example.albertli.smartbutler.fragment.GirlFragment;
 import com.example.albertli.smartbutler.fragment.UserFragment;
 import com.example.albertli.smartbutler.fragment.WechatFragment;
 import com.example.albertli.smartbutler.ui.SettingActivity;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initData();
         initView();
+
+        //CrashReport.testJavaCrash();
     }
     private void initData(){
         mTitle = new ArrayList<>();

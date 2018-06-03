@@ -16,7 +16,8 @@ import com.example.albertli.smartbutler.R;
 
 public class ButlerFragment extends Fragment {
 
-    public View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ){
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ){
         View view = inflater.inflate(R.layout.fragment_butler,null);
         return view;
     }

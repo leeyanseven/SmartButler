@@ -15,7 +15,9 @@ import com.example.albertli.smartbutler.R;
  */
 
 public class WechatFragment extends Fragment {
-    public View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState ) {
         View view = inflater.inflate(R.layout.fragment_wechat, null);
         return view;
     }
