@@ -10,10 +10,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.albertli.smartbutler.R;
+import com.example.albertli.smartbutler.adapter.CourierAdapter;
+import com.example.albertli.smartbutler.entity.CourierData;
 import com.example.albertli.smartbutler.utils.L;
 import com.example.albertli.smartbutler.utils.StaticClass;
 import com.kymjs.rxvolley.RxVolley;
 import com.kymjs.rxvolley.client.HttpCallback;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Project Name: SmartButler
@@ -27,6 +37,8 @@ public class CourierActivity extends BaseActivity implements View.OnClickListene
     private EditText et_number;
     private Button btn_get_courier;
     private ListView mListView;
+
+    private List<CourierData> mList = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,15 +77,20 @@ public class CourierActivity extends BaseActivity implements View.OnClickListene
                 if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(number))
                 {
                     String url = "http://v.juhe.cn/exp/index?key="+ StaticClass.COURIER_ID+
-                            "&com="+name+"&no="+"number";
+                            "&com=" + name + "&no=" + number;
+                    L.i("url:" + url);
                     //3.拿到数据请求
                     RxVolley.get(url, new HttpCallback() {
                         @Override
                         public void onSuccess(String t) {
-                            Toast.makeText(CourierActivity.this,t,Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(CourierActivity.this,t,Toast.LENGTH_SHORT).show();
                             L.i("Json:" + t);
+
+                            //4.解析json
+                            parsingJson(t);
                         }
                     });
+
                 }
                 else
                 {
@@ -84,5 +101,31 @@ public class CourierActivity extends BaseActivity implements View.OnClickListene
                 break;
 
         }
+    }
+
+    private void parsingJson(String t)
+    {
+        try {
+            JSONObject jsonObject = new JSONObject(t);
+            JSONObject jsonResult = jsonObject.getJSONObject("result");
+            JSONArray jsonArray = jsonResult.getJSONArray("list");
+            for (int i=0;i<jsonArray.length();i++)
+            {
+                JSONObject json = (JSONObject) jsonArray.get(i);
+
+                CourierData data = new CourierData();
+                data.setRemark(json.getString("remark"));
+                data.setDatetime(json.getString("datetime"));
+                data.setZone(json.getString("zone"));
+                mList.add(data);
+            }
+            Collections.reverse(mList);
+            CourierAdapter adapter = new CourierAdapter(this, mList);
+            mListView.setAdapter(adapter);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
     }
 }

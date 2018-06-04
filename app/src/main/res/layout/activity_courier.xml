@@ -9,14 +9,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="sf"
+        android:text="yd"
         android:id="@+id/et_name"
         android:hint="courier company"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="575677355677"
+        android:text="3924730222455"
         android:id="@+id/et_number"
         android:hint="courier number"/>
 
