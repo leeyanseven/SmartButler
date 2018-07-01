@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center">
+    android:gravity="center"
+    android:background="@drawable/wechat_bg"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ListView
+        android:dividerHeight="0dip"
+        android:scrollbars="none"
+        android:id="@+id/mChatListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="管家服务"
-        android:textSize="30sp"/>
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg"
+            android:text="左边"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/btn_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg"
+            android:text="右边"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
 
 </LinearLayout>

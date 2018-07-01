@@ -23,4 +23,7 @@ public class StaticClass {
     //Courier key
     public static final String COURIER_ID = "008db4b82ca280aa596ba00e809debb3";
 
+    //微信精选
+    public static final String WECHAT_KEY = "ce6dc6fd4f7bba1b2e04bbb3a7fdd616";
+
 }
